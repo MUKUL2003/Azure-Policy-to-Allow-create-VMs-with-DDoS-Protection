@@ -1,0 +1,25 @@
+{
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Network/virtualNetworks"
+      },
+      {
+        "anyOf": [
+          {
+            "field": "Microsoft.Network/virtualNetworks/ddosProtectionPlan",
+            "exists": false
+          },
+          {
+            "field": "Microsoft.Network/virtualNetworks/enableDdosProtection",
+            "equals": false
+          }
+        ]
+      }
+    ]
+  },
+  "then": {
+    "effect": "[parameters('effect')]"
+  }
+}

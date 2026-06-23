@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "policyName": {
+      "value": "require-ddos-protection-on-vnets"
+    },
+    "policyDisplayName": {
+      "value": "All Virtual Networks must be protected by DDoS Protection Standard"
+    },
+    "policyDescription": {
+      "value": "This policy ensures that all Virtual Networks in the subscription have DDoS Protection Standard enabled. VNets without DDoS Protection Standard are considered non-compliant."
+    },
+    "policyCategory": {
+      "value": "Network"
+    },
+    "policyVersion": {
+      "value": "1.0.0"
+    },
+    "policyEffect": {
+      "value": "Deny"
+    },
+    "allowedEffects": {
+      "value": ["Audit", "Deny", "Disabled"]
+    },
+    "assignmentName": {
+      "value": "assign-ddos-protection-standard"
+    },
+    "assignmentDisplayName": {
+      "value": "Enforce DDoS Protection Standard on all Virtual Networks"
+    },
+    "assignmentDescription": {
+      "value": "Assigns the DDoS Protection Standard policy to enforce compliance across all Virtual Networks."
+    },
+    "assignmentEnforcementMode": {
+      "value": "Default"
+    },
+    "nonComplianceMessage": {
+      "value": "Virtual Networks must have DDoS Protection Standard enabled. Please associate a DDoS Protection Plan and set enableDdosProtection to true."
+    }
+  }
+}
